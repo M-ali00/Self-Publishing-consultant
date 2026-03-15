@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #064e3b;
+  --color-primary-light: #0d9488;
+  --color-primary-bright: #14b8a6;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #fcd34d;
+  --color-secondary-foreground: #064e3b;
+  --color-accent: #0f766e;
+  --color-accent-foreground: #ffffff;
+  --color-muted: #f1f5f9;
+  --color-muted-foreground: #475569;
+  --color-foreground: #022c22;
+  --color-background: #ffffff;
+  --color-card: #ffffff;
+  --color-border: #e2e8f0;
+
+  --font-serif: var(--font-playfair), serif;
+  --font-sans: var(--font-outfit), sans-serif;
+  --font-mono: var(--font-inter), monospace;
+  
+  --gradient-signature: linear-gradient(135deg, #064e3b 0%, #0d9488 50%, #14b8a6 100%);
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tighter text-primary;
+  }
+
+  p {
+    @apply text-foreground/80 leading-relaxed;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-4 text-white font-bold rounded-full border border-transparent transition-all duration-300 hover:shadow-[0_0_20px_rgba(13,148,136,0.3)] hover:scale-105 active:scale-95 text-sm;
+    background: var(--gradient-signature);
+  }
+
+  .bento-card {
+    @apply rounded-[2.5rem] p-8 border border-border bg-white/60 backdrop-blur-xl shadow-sm transition-all duration-500 hover:shadow-2xl hover:border-primary/10 hover:-translate-y-1;
+  }
+}
+
+@layer utilities {
+  .bg-signature-gradient {
+    background: var(--gradient-signature);
+  }
+
+  .text-gradient-primary {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-signature);
+  }
+
+  .bg-graph-gradient {
+    background-color: #ffffff;
+    background-image: 
+      /* Subtle linear gradient for depth */
+      linear-gradient(to bottom, rgba(6, 78, 59, 0.02) 0%, transparent 100%),
+      /* Precise Graph Lines */
+      linear-gradient(rgba(6, 78, 59, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(6, 78, 59, 0.04) 1px, transparent 1px),
+      /* Strategic Brand Glows */
+      radial-gradient(circle at 10% 20%, rgba(13, 148, 136, 0.07) 0%, transparent 40%),
+      radial-gradient(circle at 90% 10%, rgba(6, 78, 59, 0.06) 0%, transparent 45%),
+      radial-gradient(circle at 50% 50%, rgba(252, 211, 77, 0.03) 0%, transparent 70%);
+    background-size: 100% 100%, 40px 40px, 40px 40px, 100% 100%, 100% 100%, 100% 100%;
+    background-attachment: fixed;
+  }
+}
