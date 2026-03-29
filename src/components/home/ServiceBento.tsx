@@ -6,7 +6,7 @@ import { Globe, Palette, ShieldCheck, Zap, PenTool, FileSearch, ArrowRight, Acti
 import { cn } from "@/lib/utils";
 
 import Link from "next/link";
-
+import Image from "next/image";
 const services = [
     {
         title: "Manuscript Assessment",
@@ -93,19 +93,98 @@ const services = [
 
 export const ServiceBento = () => {
     return (
-        <section className="py-32 bg-transparent relative overflow-hidden">
+        <section className="py-32 bg-transparent relative overflow-visible">
             <div className="max-w-7xl mx-auto px-6">
-                <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-20">
+                <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-12 mb-20">
                     <div className="max-w-3xl">
-                        <h2 className="text-[10px] font-black text-primary uppercase tracking-[0.4em] mb-6">Omni-Channel Solution</h2>
-                        <h3 className="text-5xl md:text-7xl font-black tracking-tighter leading-none mb-8 text-primary">
+                        <motion.h2 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="text-[10px] font-black text-primary uppercase tracking-[0.4em] mb-6"
+                        >
+                            Omni-Channel Solution
+                        </motion.h2>
+                        <motion.h3 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.1 }}
+                            className="text-5xl md:text-6xl lg:text-7xl xl:text-[5rem] font-black tracking-tighter leading-none mb-4 md:mb-0 text-primary"
+                        >
                             One Interface. <br />
                             <span className="font-serif italic text-primary-light">Absolute Control.</span>
-                        </h3>
+                        </motion.h3>
                     </div>
-                    <p className="text-foreground/60 text-lg max-w-sm font-medium leading-relaxed italic">
+                    <motion.p 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2 }}
+                        className="text-foreground/60 text-lg max-w-sm font-medium leading-relaxed italic pb-0 md:pb-2 lg:pb-4"
+                    >
                         "The bridge between creator and consumer has been refined into a single interface."
-                    </p>
+                    </motion.p>
+                </div>
+
+                {/* --- Illustration Banner --- */}
+                <div className="w-screen relative left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-accent mt-40 mb-40 group">
+                    {/* Background Pattern/Overlay */}
+                    <div className="absolute inset-0 opacity-40 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 70% 50%, var(--color-primary-light) 0%, transparent 60%)' }} />
+                    
+                    <div className="max-w-7xl mx-auto px-6 relative h-auto md:h-[300px] flex flex-col md:flex-row items-center py-16 md:py-0">
+                        {/* Illustration Container - Permanently Large and Out of Box */}
+                        <div className="hidden md:block absolute -left-12 lg:-left-24 -top-40 -bottom-40 w-[500px] lg:w-[650px] z-10 pointer-events-none">
+                            <div className="relative w-full h-full flex items-center justify-center">
+                                {/* Left Back Book - Permanent Pop-Out */}
+                                <div className="absolute w-[70%] h-[85%] left-0 top-8 -rotate-[18deg] -translate-x-16 -translate-y-10 opacity-95">
+                                    <Image 
+                                        src="/images/b2.png" 
+                                        alt="Book Preview Left" 
+                                        fill 
+                                        className="object-contain drop-shadow-[0_25px_50px_rgba(0,0,0,0.5)]" 
+                                    />
+                                </div>
+
+                                {/* Right Back Book - Permanent Pop-Out */}
+                                <div className="absolute w-[70%] h-[85%] right-0 top-16 rotate-[18deg] translate-x-16 -translate-y-6 opacity-95">
+                                    <Image 
+                                        src="/images/b3.png" 
+                                        alt="Book Preview Right" 
+                                        fill 
+                                        className="object-contain drop-shadow-[0_25px_50px_rgba(0,0,0,0.5)]" 
+                                    />
+                                </div>
+
+                                {/* Center Front Book - Massive Default Scale */}
+                                <div className="absolute w-[95%] h-[115%] z-20 scale-110 -translate-y-20">
+                                    <Image 
+                                        src="/images/bookmockuo.png" 
+                                        alt="Main Book Mockup" 
+                                        fill 
+                                        className="object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.7)]" 
+                                        priority
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        
+                        {/* Content */}
+                        <div className="w-full md:w-auto md:ml-auto md:max-w-2xl text-white relative z-20 md:pl-20 lg:pl-0 flex flex-col items-start justify-center">
+                            <h3 className="text-2xl md:text-3xl lg:text-4xl font-light mb-8 leading-relaxed md:leading-tight text-white/90">
+                                Our illustrations stand out in their uniqueness,<br className="hidden md:block" /> catering to a <br />
+                                <span className="font-bold text-white text-3xl md:text-4xl lg:text-5xl mt-2 block tracking-tight">diverse array of categories.</span>
+                            </h3>
+                            <div className="flex flex-wrap items-center gap-4">
+                                <Link href="/contact" className="bg-secondary hover:bg-secondary/90 text-primary px-8 py-3.5 rounded-full font-bold text-sm md:text-base transition-all hover:scale-105 active:scale-95 shadow-lg shadow-secondary/30">
+                                    Get in touch with us now!
+                                </Link>
+                                <Link href="/contact" className="bg-white hover:bg-gray-50 text-primary px-8 py-3.5 rounded-full font-bold text-sm md:text-base transition-all hover:scale-105 active:scale-95 shadow-lg shadow-black/10">
+                                    Live Chat
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">

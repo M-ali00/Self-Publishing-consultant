@@ -22,6 +22,11 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: "Self-Publishing Consultant | Your Partner in Publishing Success",
   description: "Expert self-publishing consulting to help authors reach global markets. From editing and cover design to marketing and distribution — we guide your journey.",
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({

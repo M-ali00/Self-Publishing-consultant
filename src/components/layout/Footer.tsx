@@ -47,17 +47,24 @@ export default function Footer() {
                         <h4 className="font-bold mb-8 text-xs uppercase tracking-[0.3em] text-secondary">Services</h4>
                         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-y-4 gap-x-4">
                             {[
-                                "Ghost Writing", "Editing & Proofreading", "Book Cover Design",
-                                "Video Trailer", "Book Publishing Services", "Book Marketing",
-                                "Audio Book", "Portfolio", "Privacy Policy", "Terms & Conditions"
-                            ].map((service) => (
-                                <li key={service} className="flex items-center gap-3 group">
+                                { label: "Ghost Writing", href: "/services/ghostwriting" },
+                                { label: "Editing & Proofreading", href: "/services/copyediting" },
+                                { label: "Book Cover Design", href: "/services/cover-design" },
+                                { label: "Video Trailer", href: "/services/book-trailer" },
+                                { label: "Book Publishing Services", href: "/services" },
+                                { label: "Book Marketing", href: "/services/book-launch-strategy" },
+                                { label: "Audio Book", href: "/services/audiobook-production" },
+                                { label: "Portfolio", href: "/portfolio" },
+                                { label: "Privacy Policy", href: "/privacy" },
+                                { label: "Terms & Conditions", href: "/terms" }
+                            ].map((item) => (
+                                <li key={item.label} className="flex items-center gap-3 group">
                                     <div className="w-1.5 h-1.5 border-t-2 border-r-2 border-secondary rotate-45 shrink-0 transition-transform group-hover:translate-x-1" />
                                     <Link
-                                        href={service === "Privacy Policy" ? "/privacy" : service === "Terms & Conditions" ? "/terms" : "/services"}
+                                        href={item.href}
                                         className="text-sm text-white/80 hover:text-secondary transition-colors font-medium"
                                     >
-                                        {service}
+                                        {item.label}
                                     </Link>
                                 </li>
                             ))}

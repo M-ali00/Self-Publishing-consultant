@@ -1,13 +1,42 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, MapPin, Phone, Mail, Clock, Zap, LifeBuoy } from "lucide-react";
+import { Send, MapPin, Phone, Mail, Clock, Zap, LifeBuoy, CheckCircle2 } from "lucide-react";
 import { TicketModal } from "@/components/support/TicketModal";
 import { cn } from "@/lib/utils";
+import { submitContactForm } from "@/app/actions";
 
 export default function Contact() {
     const [isTicketModalOpen, setIsTicketModalOpen] = useState(false);
+    const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setStatus("loading");
+        
+        const form = e.currentTarget;
+        const formData = new FormData(form);
+        
+        const data = {
+            name: formData.get("name") as string,
+            email: formData.get("email") as string,
+            genre: formData.get("genre") as string,
+            message: formData.get("message") as string,
+        };
+        
+        try {
+            const result = await submitContactForm(data);
+            if (result.success) {
+                setStatus("success");
+                form.reset();
+            } else {
+                setStatus("error");
+            }
+        } catch (error) {
+            setStatus("error");
+        }
+    };
 
     return (
         <div className="pt-32 pb-24 bg-transparent min-h-screen">
@@ -77,40 +106,70 @@ export default function Contact() {
                             <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-[100px] pointer-events-none" />
                             <h2 className="text-3xl md:text-4xl font-black text-white mb-10 tracking-tighter">Strategic Inquiry <span className="text-secondary font-serif italic">Details.</span></h2>
                             
-                            <form className="space-y-8 relative z-10">
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                    <div className="space-y-3">
-                                        <label className="block text-[10px] font-black text-white/40 uppercase tracking-[0.3em]">Full Identity</label>
-                                        <input type="text" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 text-white focus:outline-none focus:border-secondary/50 focus:bg-white/10 transition-all text-sm font-medium placeholder:text-white/20" placeholder="e.g. Alexander Knight" required />
+                            {status === "success" ? (
+                                <motion.div
+                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    className="text-center py-20 relative z-10"
+                                >
+                                    <div className="w-20 h-20 bg-secondary/20 rounded-full flex items-center justify-center mx-auto mb-8">
+                                        <CheckCircle2 className="w-10 h-10 text-secondary" />
                                     </div>
-                                    <div className="space-y-3">
-                                        <label className="block text-[10px] font-black text-white/40 uppercase tracking-[0.3em]">Email Portal</label>
-                                        <input type="email" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 text-white focus:outline-none focus:border-secondary/50 focus:bg-white/10 transition-all text-sm font-medium placeholder:text-white/20" placeholder="name@domain.com" required />
-                                    </div>
-                                </div>
-                                <div className="space-y-3">
-                                    <label className="block text-[10px] font-black text-white/40 uppercase tracking-[0.3em]">Architecture Path</label>
-                                    <div className="relative">
-                                        <select className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 text-white focus:outline-none focus:border-secondary/50 focus:bg-white/10 transition-all text-sm font-medium cursor-pointer appearance-none">
-                                            <option className="bg-primary">Manuscript Assessment</option>
-                                            <option className="bg-primary">Full Global Distribution</option>
-                                            <option className="bg-primary">Executive Branding & Cover</option>
-                                            <option className="bg-primary">Marketing Multiplier (SEO/Ads)</option>
-                                            <option className="bg-primary">General Consultation</option>
-                                        </select>
-                                        <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none opacity-40">
-                                            <Zap size={14} />
+                                    <h3 className="text-3xl font-bold text-white mb-4">Transmission Recieved.</h3>
+                                    <p className="text-white/60 font-medium mb-8">Your query has been securely transmitted to our strategists.</p>
+                                    <button 
+                                        onClick={() => setStatus("idle")}
+                                        className="text-secondary font-black uppercase tracking-widest text-[10px] hover:underline"
+                                    >
+                                        Send Another Request
+                                    </button>
+                                </motion.div>
+                            ) : (
+                                <form className="space-y-8 relative z-10" onSubmit={handleSubmit}>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                        <div className="space-y-3">
+                                            <label className="block text-[10px] font-black text-white/40 uppercase tracking-[0.3em]">Full Identity</label>
+                                            <input name="name" type="text" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 text-white focus:outline-none focus:border-secondary/50 focus:bg-white/10 transition-all text-sm font-medium placeholder:text-white/20" placeholder="e.g. Alexander Knight" required />
+                                        </div>
+                                        <div className="space-y-3">
+                                            <label className="block text-[10px] font-black text-white/40 uppercase tracking-[0.3em]">Email Portal</label>
+                                            <input name="email" type="email" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 text-white focus:outline-none focus:border-secondary/50 focus:bg-white/10 transition-all text-sm font-medium placeholder:text-white/20" placeholder="name@domain.com" required />
                                         </div>
                                     </div>
-                                </div>
-                                <div className="space-y-3">
-                                    <label className="block text-[10px] font-black text-white/40 uppercase tracking-[0.3em]">Project Brief</label>
-                                    <textarea className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 text-white focus:outline-none focus:border-secondary/50 focus:bg-white/10 transition-all h-40 resize-none text-sm font-medium placeholder:text-white/20" placeholder="Detail your book's genre, word count, and mission objectives..." required></textarea>
-                                </div>
-                                <button className="w-full py-6 bg-secondary text-primary font-black tracking-[0.2em] uppercase text-xs rounded-2xl shadow-xl shadow-secondary/10 hover:bg-white transition-all flex items-center justify-center gap-4 active:scale-95 group">
-                                    <Send size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" /> Transmit Strategic Request
-                                </button>
-                            </form>
+                                    <div className="space-y-3">
+                                        <label className="block text-[10px] font-black text-white/40 uppercase tracking-[0.3em]">Architecture Path</label>
+                                        <div className="relative">
+                                            <select name="genre" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 text-white focus:outline-none focus:border-secondary/50 focus:bg-white/10 transition-all text-sm font-medium cursor-pointer appearance-none">
+                                                <option className="bg-primary">Manuscript Assessment</option>
+                                                <option className="bg-primary">Full Global Distribution</option>
+                                                <option className="bg-primary">Executive Branding & Cover</option>
+                                                <option className="bg-primary">Marketing Multiplier (SEO/Ads)</option>
+                                                <option className="bg-primary">General Consultation</option>
+                                            </select>
+                                            <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none opacity-40 text-white">
+                                                <Zap size={14} />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="space-y-3">
+                                        <label className="block text-[10px] font-black text-white/40 uppercase tracking-[0.3em]">Project Brief</label>
+                                        <textarea name="message" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 text-white focus:outline-none focus:border-secondary/50 focus:bg-white/10 transition-all h-40 resize-none text-sm font-medium placeholder:text-white/20" placeholder="Detail your book's genre, word count, and mission objectives..." required></textarea>
+                                    </div>
+                                    <button 
+                                        disabled={status === "loading"}
+                                        className="w-full py-6 bg-secondary text-primary font-black tracking-[0.2em] uppercase text-xs rounded-2xl shadow-xl shadow-secondary/10 hover:bg-white transition-all flex items-center justify-center gap-4 active:scale-95 group"
+                                    >
+                                        {status === "loading" ? "Transmitting..." : (
+                                            <>
+                                                <Send size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" /> Transmit Strategic Request
+                                            </>
+                                        )}
+                                    </button>
+                                    {status === "error" && (
+                                        <p className="text-red-400 text-[10px] font-bold text-center uppercase tracking-widest mt-4">Failed to connect to transmission node. Try again.</p>
+                                    )}
+                                </form>
+                            )}
                         </div>
                     </div>
                 </div>

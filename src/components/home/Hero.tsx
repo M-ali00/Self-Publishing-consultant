@@ -128,8 +128,17 @@ export const Hero = () => {
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1.2, delay: 0.5, ease: "easeOut" }}
-                    className="relative mt-12 md:mt-24 mx-auto max-w-6xl px-2 sm:px-4 lg:px-8"
+                    className="relative mt-24 md:mt-32 mx-auto max-w-6xl px-2 sm:px-4 lg:px-8"
                 >
+                    {/* Creative illustration of kid sitting on the box edge */}
+                    <div className="absolute -top-[120px] md:-top-[200px] right-[10%] md:right-[15%] w-[150px] md:w-[250px] aspect-square z-20 pointer-events-none hover:rotate-2 transition-transform duration-500 origin-bottom">
+                        <img 
+                            src="/images/kid-sitting.png" 
+                            alt="Kid sitting on the box" 
+                            className="w-full h-full object-contain drop-shadow-[0_20px_20px_rgba(0,0,0,0.3)]"
+                        />
+                    </div>
+
                     <div className="relative rounded-[2rem] md:rounded-[3rem] border border-border bg-white p-3 sm:p-4 md:p-8 shadow-[0_32px_64px_-16px_rgba(20,184,166,0.15)] overflow-hidden">
                         <div className="flex items-center gap-2 mb-6 md:mb-10 px-4">
                             <div className="flex gap-1.5 grayscale opacity-50">
@@ -137,7 +146,7 @@ export const Hero = () => {
                                 <div className="w-2.5 h-2.5 rounded-full bg-amber-400" />
                                 <div className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
                             </div>
-                            <div className="ml-4 h-6 px-3 rounded-full bg-muted flex items-center gap-2">
+                            <div className="ml-4 h-6 px-3 rounded-full bg-muted flex items-center gap-2 relative z-10">
                                 <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
                                 <span className="text-[9px] font-bold uppercase tracking-widest text-primary">Live Neural Node</span>
                             </div>
