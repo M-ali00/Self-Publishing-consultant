@@ -55,7 +55,7 @@ export const Navbar = () => {
                 <Link href="/" className="flex items-center gap-2 md:gap-3 shrink-0 group">
                     <div className="w-8 h-8 md:w-10 md:h-10 relative flex items-center justify-center transition-transform group-hover:scale-110">
                         <img
-                            src="/logo.png"
+                            src="/logo-spc.png"
                             alt="Self-Publishing Consultant Logo"
                             className="w-full h-full object-contain"
                         />
@@ -112,7 +112,7 @@ export const Navbar = () => {
                     >
                         <div className="flex items-center justify-between p-6 border-b border-border">
                             <Link href="/" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-2">
-                                <img src="/logo.png" alt="" className="w-8 h-8" />
+                                <img src="/logo-spc.png" alt="" className="w-8 h-8" />
                                 <span className="font-black text-sm">Self-Publishing Consultant</span>
                             </Link>
                             <button
@@ -197,7 +197,7 @@ export const Footer = () => {
                         <Link href="/" className="flex items-center gap-3 group">
                             <div className="w-10 h-10 relative">
                                 <img
-                                    src="/logo.png"
+                                    src="/logo-spc.png"
                                     alt="Self-Publishing Consultant Logo"
                                     className="w-full h-full object-contain brightness-0 invert transition-transform group-hover:scale-110"
                                 />

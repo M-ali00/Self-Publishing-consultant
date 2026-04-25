@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 80">
+  <rect x="44" y="4" width="10" height="72" fill="#f5f0ff" rx="1"/>
+  <line x1="47" y1="4" x2="47" y2="76" stroke="#ddd6fe" stroke-width="0.4"/>
+  <rect x="7" y="2" width="39" height="76" fill="#7c3aed" rx="3"/>
+  <rect x="7" y="2" width="6" height="76" fill="#5b21b6" rx="2"/>
+  <!-- Open book icon on cover -->
+  <path d="M17 38 Q27 32 27 38 L27 55 Q17 50 17 55Z" fill="rgba(255,255,255,0.2)"/>
+  <path d="M37 38 Q27 32 27 38 L27 55 Q37 50 37 55Z" fill="rgba(255,255,255,0.15)"/>
+  <rect x="16" y="14" width="22" height="1.5" fill="rgba(255,255,255,0.4)" rx="1"/>
+  <rect x="18" y="19" width="16" height="1" fill="rgba(255,255,255,0.25)" rx="1"/>
+</svg>

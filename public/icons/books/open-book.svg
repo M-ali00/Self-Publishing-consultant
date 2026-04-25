@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 88">
+  <g fill="none" stroke="#0d9488" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Left back cover rectangle -->
+    <path d="M6 24 C6 18 10 16 15 16 L46 16 L46 72 L15 72 C10 72 6 70 6 64 Z"/>
+    <!-- Right back cover rectangle -->
+    <path d="M94 24 C94 18 90 16 85 16 L54 16 L54 72 L85 72 C90 72 94 70 94 64 Z"/>
+    <!-- Left page (curling from spine outward) -->
+    <path d="M50 12 C38 10 16 13 6 17 L6 64 C16 61 37 59 50 63"/>
+    <!-- Right page (mirror) -->
+    <path d="M50 12 C62 10 84 13 94 17 L94 64 C84 61 63 59 50 63"/>
+    <!-- Left bottom page flap -->
+    <path d="M6 64 C16 68 33 73 50 76"/>
+    <!-- Right bottom page flap -->
+    <path d="M94 64 C84 68 67 73 50 76"/>
+  </g>
+</svg>

@@ -239,6 +239,45 @@ export default function RootLayout({
         className={`${inter.variable} ${playfair.variable} ${outfit.variable} bg-graph-gradient antialiased selection:bg-primary/20 selection:text-primary`}
       >
         <JsonLd schema={[organizationSchema, websiteSchema]} />
+
+        {/* ── Shooting Stars Background ── */}
+        <div id="shooting-stars-bg" aria-hidden="true">
+          {/* Static twinkling star field */}
+          <div className="stars-small" />
+          <div className="stars-medium" />
+          <div className="stars-large" />
+          {/* Shooting star streaks */}
+          <div className="shooting-star" />
+          <div className="shooting-star" />
+          <div className="shooting-star" />
+          <div className="shooting-star" />
+          <div className="shooting-star" />
+          <div className="shooting-star" />
+          <div className="shooting-star" />
+          <div className="shooting-star" />
+          <div className="shooting-star" />
+          <div className="shooting-star" />
+          <div className="shooting-star" />
+          <div className="shooting-star" />
+          {/* Floating open-book icons — nth-child 16..23 */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/icons/books/open-book.svg" alt="" className="floating-book" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/icons/books/open-book.svg" alt="" className="floating-book" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/icons/books/open-book.svg" alt="" className="floating-book" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/icons/books/open-book.svg" alt="" className="floating-book" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/icons/books/open-book.svg" alt="" className="floating-book" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/icons/books/open-book.svg" alt="" className="floating-book" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/icons/books/open-book.svg" alt="" className="floating-book" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/icons/books/open-book.svg" alt="" className="floating-book" />
+        </div>
+
         <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />

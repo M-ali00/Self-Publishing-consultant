@@ -78,7 +78,7 @@ function buildServiceSchema(service: any) {
       url: SITE_URL,
       logo: {
         "@type": "ImageObject",
-        "url": `${SITE_URL}/logo.png`
+        "url": `${SITE_URL}/logo-spc.png`
       }
     },
     url: serviceUrl,

@@ -16,10 +16,10 @@ export const ContactForm = () => {
         const formData = new FormData(form);
         
         const data = {
-            name: formData.get("name") as string,
-            email: formData.get("email") as string,
-            genre: formData.get("genre") as string,
-            message: formData.get("message") as string,
+            name: formData.get("author-name") as string,
+            email: formData.get("author-email") as string,
+            genre: formData.get("author-genre-selection") as string,
+            message: formData.get("project-message") as string,
         };
         
         try {
@@ -112,22 +112,22 @@ export const ContactForm = () => {
                                 <form id="global-publication-inquiry" className="space-y-6 relative z-10" onSubmit={handleSubmit}>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         <div className="space-y-2">
-                                            <label htmlFor="author-full-name" className="text-[10px] font-black uppercase tracking-widest text-white/40 ml-1">Full Name</label>
+                                            <label htmlFor="author-name" className="text-[10px] font-black uppercase tracking-widest text-white/40 ml-1">Full Name</label>
                                             <input 
-                                                id="author-full-name"
+                                                id="author-name"
                                                 type="text" 
-                                                name="name"
+                                                name="author-name"
                                                 required
                                                 className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-secondary transition-all font-medium text-white placeholder:text-white/20 capitalize" 
                                                 placeholder="William Shakespeare" 
                                             />
                                         </div>
                                         <div className="space-y-2">
-                                            <label htmlFor="author-email-address" className="text-[10px] font-black uppercase tracking-widest text-white/40 ml-1">Email Address</label>
+                                            <label htmlFor="author-email" className="text-[10px] font-black uppercase tracking-widest text-white/40 ml-1">Email Address</label>
                                             <input 
-                                                id="author-email-address"
+                                                id="author-email"
                                                 type="email" 
-                                                name="email"
+                                                name="author-email"
                                                 required
                                                 className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-secondary transition-all font-medium text-white placeholder:text-white/20" 
                                                 placeholder="william@stratford.com" 
@@ -136,10 +136,10 @@ export const ContactForm = () => {
                                     </div>
                                     
                                     <div className="space-y-2">
-                                        <label htmlFor="book-genre-selection" className="text-[10px] font-black uppercase tracking-widest text-white/40 ml-1">Manuscript Topic / Genre</label>
+                                        <label htmlFor="author-genre-selection" className="text-[10px] font-black uppercase tracking-widest text-white/40 ml-1">Manuscript Topic / Genre</label>
                                         <select 
-                                            id="book-genre-selection"
-                                            name="genre"
+                                            id="author-genre-selection"
+                                            name="author-genre-selection"
                                             className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-secondary transition-all font-medium text-white appearance-none"
                                         >
                                             <option className="bg-primary text-white">Fiction / Novel</option>
@@ -151,10 +151,10 @@ export const ContactForm = () => {
                                     </div>
 
                                     <div className="space-y-2">
-                                        <label htmlFor="project-initial-message" className="text-[10px] font-black uppercase tracking-widest text-white/40 ml-1">Your Message</label>
+                                        <label htmlFor="project-message" className="text-[10px] font-black uppercase tracking-widest text-white/40 ml-1">Your Message</label>
                                         <textarea 
-                                            id="project-initial-message"
-                                            name="message"
+                                            id="project-message"
+                                            name="project-message"
                                             required
                                             className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-secondary transition-all font-medium text-white placeholder:text-white/20 h-40 resize-none" 
                                             placeholder="Tell us about your masterpiece..." 

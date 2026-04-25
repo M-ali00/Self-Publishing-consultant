@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, BookOpen, CheckCircle2, Globe, Shield, Zap, TrendingUp, Quote } from "lucide-react";
+import { ArrowRight, BookOpen, CheckCircle2, Globe, Zap, TrendingUp, Quote } from "lucide-react";
 import Image from "next/image";
 
 export const Hero = ({ initialTransactions = [] }: { initialTransactions?: any[] }) => {
@@ -85,30 +85,20 @@ export const Hero = ({ initialTransactions = [] }: { initialTransactions?: any[]
     return (
         <section className="relative pt-32 pb-20 overflow-hidden">
             <div className="max-w-7xl mx-auto px-6 text-center">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary/5 border border-primary/10 mb-10"
-                >
+                <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary/5 border border-primary/10 mb-10">
                     <span className="flex h-2 w-2 rounded-full bg-primary-light animate-ping" />
                     <span className="text-[10px] font-black text-primary uppercase tracking-[0.3em]">Premium Publishing Infrastructure</span>
-                </motion.div>
+                </div>
 
-                <motion.h1
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-                    className="text-6xl sm:text-8xl lg:text-9xl font-black tracking-tighter mb-10 leading-[0.85] text-primary"
-                >
+                <h1 className="text-6xl sm:text-8xl lg:text-9xl font-black tracking-tighter mb-10 leading-[0.85] text-primary">
                     Designed to <br />
                     Delight <span className="font-serif italic text-primary-light">Authors.</span>
-                </motion.h1>
+                </h1>
 
                 <motion.p
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                    transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
                     className="max-w-3xl mx-auto text-xl md:text-2xl text-foreground/80 mb-14 font-medium leading-relaxed"
                 >
                     The distinction between a "book project" and a "global legacy" is infrastructure. Reach 180+ markets with <span className="text-primary-light font-bold underline decoration-primary-light/30 underline-offset-8">AI-optimized pathways</span> and absolute creative control.
@@ -117,7 +107,7 @@ export const Hero = ({ initialTransactions = [] }: { initialTransactions?: any[]
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+                    transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
                     className="flex flex-col sm:flex-row items-center justify-center gap-4 px-4 md:px-0"
                 >
                     <Link
@@ -364,19 +354,7 @@ export const Hero = ({ initialTransactions = [] }: { initialTransactions?: any[]
                 </motion.div>
             </div>
 
-            {/* Premium Decals */}
-            <div className="absolute top-1/3 left-4 2xl:left-8 bg-primary p-5 rounded-[2rem] shadow-2xl border border-emerald-900/30 animate-float hidden xl:block z-20">
-                <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center border border-primary/20">
-                        <Shield className="text-primary w-6 h-6" />
-                    </div>
-                    <div>
-                        <p className="text-[9px] text-primary font-black uppercase tracking-[0.3em] mb-1">Copyright Secured</p>
-                        <p className="text-lg font-bold text-white tracking-tight">L-Block Verified</p>
-                    </div>
-                </div>
-            </div>
-
+            {/* Premium Decal — right side */}
             <div className="absolute bottom-24 right-4 2xl:right-8 bg-primary p-5 rounded-[2rem] shadow-2xl border border-emerald-900/30 animate-float hidden xl:block z-20" style={{ animationDelay: '2.5s' }}>
                 <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center border border-secondary/20">

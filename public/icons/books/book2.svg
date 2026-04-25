@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 80">
+  <!-- Pages edge -->
+  <rect x="44" y="4" width="10" height="72" fill="#f0f4f4" rx="1"/>
+  <line x1="47" y1="4" x2="47" y2="76" stroke="#d1d5db" stroke-width="0.4"/>
+  <line x1="50" y1="4" x2="50" y2="76" stroke="#d1d5db" stroke-width="0.4"/>
+  <!-- Cover -->
+  <rect x="7" y="2" width="39" height="76" fill="#0d9488" rx="3"/>
+  <!-- Spine -->
+  <rect x="7" y="2" width="6" height="76" fill="#065f46" rx="2"/>
+  <!-- Title area -->
+  <rect x="14" y="10" width="26" height="18" fill="rgba(255,255,255,0.12)" rx="2"/>
+  <rect x="16" y="14" width="20" height="1.5" fill="rgba(255,255,255,0.5)" rx="1"/>
+  <rect x="16" y="18" width="14" height="1" fill="rgba(255,255,255,0.3)" rx="1"/>
+  <!-- Quill decoration -->
+  <path d="M27 38 Q32 45 27 55 Q22 45 27 38Z" fill="rgba(255,255,255,0.25)"/>
+  <line x1="27" y1="42" x2="27" y2="58" stroke="rgba(255,255,255,0.3)" stroke-width="0.8"/>
+</svg>

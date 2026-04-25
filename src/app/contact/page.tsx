@@ -19,10 +19,10 @@ export default function Contact() {
         const formData = new FormData(form);
         
         const data = {
-            name: formData.get("name") as string,
-            email: formData.get("email") as string,
-            genre: formData.get("genre") as string,
-            message: formData.get("message") as string,
+            name: formData.get("author-name") as string,
+            email: formData.get("author-email") as string,
+            genre: formData.get("author-genre-selection") as string,
+            message: formData.get("project-message") as string,
         };
         
         try {
@@ -129,17 +129,17 @@ export default function Contact() {
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                         <div className="space-y-3">
                                             <label htmlFor="author-name" className="block text-[10px] font-black text-white/40 uppercase tracking-[0.3em]">Full Identity</label>
-                                            <input id="author-name" name="name" type="text" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 text-white focus:outline-none focus:border-secondary/50 focus:bg-white/10 transition-all text-sm font-medium placeholder:text-white/20" placeholder="e.g. Alexander Knight" required />
+                                            <input id="author-name" name="author-name" type="text" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 text-white focus:outline-none focus:border-secondary/50 focus:bg-white/10 transition-all text-sm font-medium placeholder:text-white/20" placeholder="e.g. Alexander Knight" required />
                                         </div>
                                         <div className="space-y-3">
                                             <label htmlFor="author-email" className="block text-[10px] font-black text-white/40 uppercase tracking-[0.3em]">Email Portal</label>
-                                            <input id="author-email" name="email" type="email" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 text-white focus:outline-none focus:border-secondary/50 focus:bg-white/10 transition-all text-sm font-medium placeholder:text-white/20" placeholder="name@domain.com" required />
+                                            <input id="author-email" name="author-email" type="email" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 text-white focus:outline-none focus:border-secondary/50 focus:bg-white/10 transition-all text-sm font-medium placeholder:text-white/20" placeholder="name@domain.com" required />
                                         </div>
                                     </div>
                                     <div className="space-y-3">
-                                        <label htmlFor="project-architecture" className="block text-[10px] font-black text-white/40 uppercase tracking-[0.3em]">Architecture Path</label>
+                                        <label htmlFor="author-genre-selection" className="block text-[10px] font-black text-white/40 uppercase tracking-[0.3em]">Architecture Path</label>
                                         <div className="relative">
-                                            <select id="project-architecture" name="genre" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 text-white focus:outline-none focus:border-secondary/50 focus:bg-white/10 transition-all text-sm font-medium cursor-pointer appearance-none">
+                                            <select id="author-genre-selection" name="author-genre-selection" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 text-white focus:outline-none focus:border-secondary/50 focus:bg-white/10 transition-all text-sm font-medium cursor-pointer appearance-none">
                                                 <option className="bg-primary">Manuscript Assessment</option>
                                                 <option className="bg-primary">Full Global Distribution</option>
                                                 <option className="bg-primary">Executive Branding & Cover</option>
@@ -152,8 +152,8 @@ export default function Contact() {
                                         </div>
                                     </div>
                                     <div className="space-y-3">
-                                        <label htmlFor="project-brief" className="block text-[10px] font-black text-white/40 uppercase tracking-[0.3em]">Project Brief</label>
-                                        <textarea id="project-brief" name="message" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 text-white focus:outline-none focus:border-secondary/50 focus:bg-white/10 transition-all h-40 resize-none text-sm font-medium placeholder:text-white/20" placeholder="Detail your book's genre, word count, and mission objectives..." required></textarea>
+                                        <label htmlFor="project-message" className="block text-[10px] font-black text-white/40 uppercase tracking-[0.3em]">Project Brief</label>
+                                        <textarea id="project-message" name="project-message" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 text-white focus:outline-none focus:border-secondary/50 focus:bg-white/10 transition-all h-40 resize-none text-sm font-medium placeholder:text-white/20" placeholder="Detail your book's genre, word count, and mission objectives..." required></textarea>
                                     </div>
                                     <button 
                                         type="submit"

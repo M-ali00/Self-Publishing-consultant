@@ -50,12 +50,14 @@ export async function scheduleMeeting(formData: {
     };
 
     try {
+        if (!process.env.EMAIL_USER || process.env.EMAIL_USER === "your-email@gmail.com") {
+            console.log("[DEV MODE] Simulated sending email locally. Payload:", { name, email, date, time, project });
+            return { success: true };
+        }
         await transporter.sendMail(mailOptions);
         return { success: true };
     } catch (error) {
         console.error("Email send error:", error);
-        // We'll return success true for now to show the UI works, 
-        // but log the error if credentials aren't set up yet.
         return { success: false, error: "Failed to send email. Please check server credentials." };
     }
 }
@@ -110,6 +112,10 @@ export async function submitTicket(formData: {
     };
 
     try {
+        if (!process.env.EMAIL_USER || process.env.EMAIL_USER === "your-email@gmail.com") {
+            console.log("[DEV MODE] Simulated ingesting support ticket locally. Payload:", { name, email, category, priority, subject, message });
+            return { success: true };
+        }
         await transporter.sendMail(mailOptions);
         return { success: true };
     } catch (error) {
@@ -181,6 +187,10 @@ export async function submitContactForm(formData: {
     };
 
     try {
+        if (!process.env.EMAIL_USER || process.env.EMAIL_USER === "your-email@gmail.com") {
+            console.log("[DEV MODE] Simulated sending contact inquiry locally. Payload:", { name, email, genre, message });
+            return { success: true };
+        }
         await transporter.sendMail(mailOptions);
         return { success: true };
     } catch (error) {

@@ -17,6 +17,48 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    category: "Pillar Guides",
+    title: "The Ultimate Guide to US State-Level Taxes for Indie Authors (2026)",
+    excerpt: "Navigating physical vs. digital sales tax, economic nexus for indie authors, and KDP's tax interview matrix — the definitive US-specific guide no other publisher covers.",
+    date: "Apr 6, 2026",
+    readTime: "14 min read",
+    image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=800&auto=format&fit=crop",
+    iconSlug: "trending-up",
+    slug: "us-state-level-taxes-indie-authors",
+    author: {
+        name: "M. Ali",
+        avatar: "https://i.pravatar.cc/150?u=ali"
+    }
+  },
+  {
+    category: "Pillar Guides",
+    title: "Registering Your Book with the US Copyright Office in 2026: The E-Filing Fast-Track",
+    excerpt: "Exact timelines, the $65 eCO system, mandatory AI declaration caveats, and Library of Congress deposit requirements — everything the competitors don't tell you.",
+    date: "Apr 6, 2026",
+    readTime: "11 min read",
+    image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=800&auto=format&fit=crop",
+    iconSlug: "book-open",
+    slug: "us-copyright-office-e-filing-2026",
+    author: {
+        name: "M. Ali",
+        avatar: "https://i.pravatar.cc/150?u=ali"
+    }
+  },
+  {
+    category: "Pillar Guides",
+    title: "LLC Formation for US Authors: Protecting Your Royalties on KDP & IngramSpark",
+    excerpt: "When an author should transition to an LLC to deduct Amazon Ads spend, ISBN purchases, and cover design overhead safely — a Self Publishing Consultant exclusive.",
+    date: "Apr 6, 2026",
+    readTime: "12 min read",
+    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=800&auto=format&fit=crop",
+    iconSlug: "sparkles",
+    slug: "llc-formation-us-authors-kdp-ingram",
+    author: {
+        name: "M. Ali",
+        avatar: "https://i.pravatar.cc/150?u=ali"
+    }
+  },
+  {
     category: "Marketing",
     title: "Scaling Amazon Ads: The Neural Bidding Framework",
     excerpt: "Leverage advanced AI tools to manage your AMS campaigns and significantly lower your ACoS while doubling unit sales.",
@@ -102,4 +144,4 @@ export const blogPosts: BlogPost[] = [
   }
 ];
 
-export const categories = ["All", "Marketing", "Publishing", "Tools & Resources", "Author Stories"];
+export const categories = ["All", "Pillar Guides", "Marketing", "Publishing", "Tools & Resources", "Author Stories"];
