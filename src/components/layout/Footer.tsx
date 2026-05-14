@@ -56,7 +56,8 @@ export default function Footer() {
                                 { label: "Audio Book", href: "/services/audiobook-production" },
                                 { label: "Portfolio", href: "/portfolio" },
                                 { label: "Privacy Policy", href: "/privacy" },
-                                { label: "Terms & Conditions", href: "/terms" }
+                                { label: "Terms & Conditions", href: "/terms" },
+                                { label: "XML Sitemap", href: "/sitemap.xml" }
                             ].map((item) => (
                                 <li key={item.label} className="flex items-center gap-3 group">
                                     <div className="w-1.5 h-1.5 border-t-2 border-r-2 border-secondary rotate-45 shrink-0 transition-transform group-hover:translate-x-1" />

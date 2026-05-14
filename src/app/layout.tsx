@@ -56,9 +56,9 @@ export const metadata: Metadata = {
   category: "Publishing Services",
 
   /* ── Canonical & Alternates ─────────────────────────────────────────── */
-  alternates: {
-    canonical: "/",
-  },
+  // alternates: {
+  //   canonical: "/",
+  // },
 
   /* ── Robots ─────────────────────────────────────────────────────────── */
   robots: {
@@ -114,7 +114,7 @@ export const metadata: Metadata = {
 
   /* ── Verification tokens (add real values when available) ───────────── */
   verification: {
-    google: "google-site-verification-token",
+    google: "n3lL6PfemmibmspRSJi5kWd8FkDbIXx4kNav-Jcb4pM",
   },
 };
 

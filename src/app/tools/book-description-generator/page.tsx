@@ -16,8 +16,11 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-    title: "Amazon Book Blurb Generator | KDP HTML Description Tool",
-    description: "Format your book description for Amazon KDP easily. Use headers, bold, and lists without knowing HTML. Professional layout tool for authors.",
+    title: "Amazon Book Description Generator | KDP HTML Formatter",
+    description: "Create professional, conversion-optimized Amazon book descriptions with proper HTML formatting. Stand out in the Kindle store.",
+    alternates: {
+        canonical: "/tools/book-description-generator",
+    },
 };
 
 export default function BlurbGeneratorPage() {

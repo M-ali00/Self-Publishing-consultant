@@ -16,8 +16,11 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-    title: "Free QR Code Generator for Authors | Custom Book Marketing",
-    description: "Create custom QR codes for your book. Links to Amazon, your website, or social media. Free high-resolution downloads with custom branding options.",
+    title: "QR Code Generator for Authors | Marketing & Link Tracking",
+    description: "Create custom QR codes for your book's back cover, marketing materials, and landing pages. Free tool for independent authors.",
+    alternates: {
+        canonical: "/tools/qr-code-generator",
+    },
 };
 
 export default function QRGeneratorPage() {

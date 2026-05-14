@@ -15,8 +15,11 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-    title: "KENP Royalty Calculator | Kindle Unlimited Earning Estimator",
-    description: "Calculate your estimated earnings from Kindle Edition Normalized Pages read. Free tool for KDP Select authors.",
+    title: "Kindle Unlimited KENP Royalty Calculator | Kindle Page Read Estimator",
+    description: "Calculate your estimated earnings from Kindle Unlimited (KU) page reads. Understand KENP rates and maximize your ebook royalties.",
+    alternates: {
+        canonical: "/tools/kenp-calculator",
+    },
 };
 
 export default function KenpCalculatorPage() {

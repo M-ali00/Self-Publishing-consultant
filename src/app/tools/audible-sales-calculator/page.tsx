@@ -15,8 +15,11 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-    title: "Audible Sales Calculator | Audiobook Performance Estimator",
-    description: "Convert your Audible Best Seller Rank into estimated daily and monthly audiobook sales units. Free professional tools for authors.",
+    title: "Audible Sales Calculator | Audiobook BSR Estimator",
+    description: "Estimate monthly audiobook sales based on Audible Best Seller Rank. Plan your audiobook launch with real market data.",
+    alternates: {
+        canonical: "/tools/audible-sales-calculator",
+    },
 };
 
 export default function AudibleSalesPage() {

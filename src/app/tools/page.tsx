@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Metadata } from "next";
 import {
     Barcode,
     Calculator,
@@ -15,6 +16,14 @@ import {
     SpellCheck,
     Palette
 } from "lucide-react";
+
+export const metadata: Metadata = {
+    title: "Free Author Tools | Self-Publishing Calculators & Generators",
+    description: "Empower your publishing journey with our suite of free tools: Amazon Sales Estimator, Royalty Calculator, ISBN Barcode Generator, and more.",
+    alternates: {
+        canonical: "/tools",
+    },
+};
 
 const tools = [
     {

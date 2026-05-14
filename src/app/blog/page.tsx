@@ -7,6 +7,9 @@ import { JsonLd } from "@/components/JsonLd";
 export const metadata: Metadata = {
   title: "Publishing Intelligence | Self-Publishing Blog & Industry Data",
   description: "High-level tactics, industry data, and editorial methodologies for the modern global author. Explore case studies on Amazon Ads, KDP formatting, and global rights.",
+  alternates: {
+    canonical: "/blog",
+  },
   openGraph: {
     title: "Self-Publishing Intelligence | SPC Blog",
     description: "Expert insights into keyword architecture, global distribution, and bestseller launches.",

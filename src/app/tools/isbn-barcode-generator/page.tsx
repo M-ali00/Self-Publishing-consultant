@@ -17,6 +17,9 @@ import {
 export const metadata = {
     title: "Free ISBN Barcode Generator | High-Resolution Print Ready Barcodes",
     description: "Create professional ISBN-13 barcodes for your book cover. Free, high-resolution PNG & PDF downloads compatible with KDP, IngramSpark, and global retailers. No registration required.",
+    alternates: {
+        canonical: "/tools/isbn-barcode-generator",
+    },
 };
 
 export default function ISBNBarcodePage() {

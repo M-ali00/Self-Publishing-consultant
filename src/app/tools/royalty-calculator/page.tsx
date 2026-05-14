@@ -16,8 +16,11 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-    title: "KDP Royalty Calculator | Estimate Your Book Earnings",
-    description: "Calculate your potential royalties for Amazon KDP and other distributors. Factor in printing costs, retail margins, and distribution fees accurately.",
+    title: "Amazon KDP & IngramSpark Royalty Calculator | Net Profit Per Book",
+    description: "Calculate your exact royalty per book sale on Amazon KDP and IngramSpark. Account for print costs, platform fees, and wholesale discounts.",
+    alternates: {
+        canonical: "/tools/royalty-calculator",
+    },
 };
 
 export default function RoyaltyCalculatorPage() {

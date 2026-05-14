@@ -8,6 +8,13 @@ import { FAQs } from "@/components/home/FAQs";
 import { Portfolio } from "@/components/home/Portfolio";
 import { AnswerBlock } from "@/components/layout/AnswerBlock";
 import { JsonLd } from "@/components/JsonLd";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default async function Home() {
   let initialBooks = [];

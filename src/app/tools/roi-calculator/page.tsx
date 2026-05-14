@@ -14,6 +14,9 @@ import {
 export const metadata = {
     title: "Self-Publishing ROI Calculator 2026 | Accurate Profit Planning",
     description: "Plan your book launch with precision. Calculate editing, marketing, and production costs against real-time royalty rates to forecast your net profit.",
+    alternates: {
+        canonical: "/tools/roi-calculator",
+    },
 };
 
 export default function ROICalculatorPage() {

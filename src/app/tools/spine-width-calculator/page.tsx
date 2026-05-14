@@ -14,8 +14,11 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-    title: "Book Spine Width Calculator | Precise Cover Design Tool",
-    description: "Calculate the exact width of your book spine. Crucial for paperback and hardcover wrap-around cover designs. Supports multiple paper types and page counts.",
+    title: "Book Spine Width Calculator | KDP & IngramSpark Cover Layout",
+    description: "Calculate the exact spine width for your book cover design. Supports white paper, cream paper, and color interiors for KDP and IngramSpark.",
+    alternates: {
+        canonical: "/tools/spine-width-calculator",
+    },
 };
 
 export default function SpineCalculatorPage() {

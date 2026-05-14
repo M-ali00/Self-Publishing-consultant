@@ -226,11 +226,31 @@ const howToSchema = {
   ],
 };
 
+/* ── Breadcrumb JSON-LD Schema ─────────────────────────────────────────────── */
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://selfpublishingconsultant.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://selfpublishingconsultant.com/services"
+    }
+  ]
+};
+
 /* ── Page Component (Server Component — no JS bundle for static content) ──── */
 export default function ServicesPage() {
   return (
-    <>
-      <JsonLd schema={howToSchema} />
+    <main className="min-h-screen bg-transparent pt-32 pb-24">
+      <JsonLd schema={[howToSchema, breadcrumbSchema]} />
       <div className="pt-24 bg-transparent container mx-auto px-6">
         <AnswerBlock 
           question="How do I publish a book in 2026?"
@@ -269,6 +289,6 @@ export default function ServicesPage() {
         </div>
       </div>
       <ServicesContent />
-    </>
+    </main>
   );
 }

@@ -15,8 +15,11 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-    title: "Book Hashtag Generator | Social Media Discovery Tool",
-    description: "Generate optimized hashtag sets for your book marketing across Instagram, TikTok, and X. Boost your reach and engagement.",
+    title: "Book Marketing Hashtag Generator | Instagram & TikTok for Authors",
+    description: "Generate trending hashtags for your book marketing campaigns on social media. Reach more readers on TikTok, Instagram, and X.",
+    alternates: {
+        canonical: "/tools/hashtag-generator",
+    },
 };
 
 export default function HashtagGeneratorPage() {

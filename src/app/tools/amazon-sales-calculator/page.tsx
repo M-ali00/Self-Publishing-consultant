@@ -18,6 +18,9 @@ import {
 export const metadata = {
     title: "Amazon BSR Sales Calculator | Estimated Daily Book Sales",
     description: "Convert any Amazon Best Seller Rank (BSR) into estimated daily and monthly sales. Essential market research tool for authors and publishers.",
+    alternates: {
+        canonical: "/tools/amazon-sales-calculator",
+    },
 };
 
 export default function SalesCalculatorPage() {
