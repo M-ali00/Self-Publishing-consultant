@@ -19,7 +19,7 @@ import {
 
 export const metadata: Metadata = {
     title: "Free Author Tools | Self-Publishing Calculators & Generators",
-    description: "Empower your publishing journey with our suite of free tools: Amazon Sales Estimator, Royalty Calculator, ISBN Barcode Generator, and more.",
+    description: "A comprehensive suite of free tools for self-publishing authors. ISBN generators, royalty calculators, sales estimators, and more.",
     alternates: {
         canonical: "/tools",
     },
@@ -138,11 +138,6 @@ const externalResources = [
         tag: "Design"
     }
 ];
-
-export const metadata = {
-    title: "Self-Publishing Tools | Professional Author Resource Lab",
-    description: "A comprehensive suite of free tools for self-publishing authors. ISBN generators, royalty calculators, sales estimators, and more.",
-};
 
 export default function ToolsHubPage() {
     return (
