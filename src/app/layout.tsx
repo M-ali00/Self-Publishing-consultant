@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { JsonLd } from "@/components/JsonLd";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -282,6 +283,7 @@ export default function RootLayout({
         <main className="min-h-screen">{children}</main>
         <Footer />
       </body>
+      <GoogleAnalytics gaId="G-4NR1V8FZKS" />
     </html>
   );
 }
